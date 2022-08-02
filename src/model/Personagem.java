@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Personagem {
     
-    private String nome;
+    protected String nome;
 
-    private Integer vida;
+    protected static Integer vida;
 
-    private Integer ataque;
+    protected Integer ataque;
 
-    private Integer defesa;
+    protected Integer defesa;
 
 //#region Construtor    
 public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
         this.nome = nome;
-        this.vida = vida;
+        Personagem.vida = vida;
         this.ataque = ataque;
         this.defesa = defesa;
 
@@ -36,8 +36,8 @@ public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
         return vida;
     }
 
-    public void setVida(Integer vida) {
-        this.vida = vida;
+    public static void setVida(Integer vida) {
+        Personagem.vida = vida;
     }
     
     public Integer getAtaque() {
@@ -56,6 +56,11 @@ public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
         this.defesa = defesa;
     }
 //#endregion
-    
+   
+public Integer ataca(Integer ataque, Integer vida){
+    ataque = ataque - vida;
+    Personagem.setVida(vida);
+    return vida;
+}
 
 }
