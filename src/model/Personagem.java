@@ -1,25 +1,21 @@
 package model;
 
-import java.util.ArrayList;
-
-public class Personagem {
+public abstract class Personagem {
     
-    protected String nome;
+    private String nome;
 
-    protected static Integer vida;
+    private Integer vida;
 
-    protected Integer ataque;
+    private Integer ataque;
 
-    protected Integer defesa;
+    private Integer defesa;
 
 //#region Construtor    
 public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
         this.nome = nome;
-        Personagem.vida = vida;
+        this.vida = vida;
         this.ataque = ataque;
         this.defesa = defesa;
-
-        ArrayList bolsaPerso = new ArrayList<>();
     }
 //#endregion
 
@@ -36,8 +32,8 @@ public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
         return vida;
     }
 
-    public static void setVida(Integer vida) {
-        Personagem.vida = vida;
+    public void setVida(Integer vida) {
+        this.vida = vida;
     }
     
     public Integer getAtaque() {
@@ -57,10 +53,5 @@ public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
     }
 //#endregion
    
-public Integer ataca(Integer ataque, Integer vida){
-    ataque = ataque - vida;
-    Personagem.setVida(vida);
-    return vida;
-}
-
+public abstract Integer ataca(Integer ataque, Integer vida);
 }
