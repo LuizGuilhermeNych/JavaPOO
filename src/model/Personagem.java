@@ -32,8 +32,9 @@ public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
         return vida;
     }
 
-    public void setVida(Integer vida) {
+    public Integer setVida(Integer vida) {
         this.vida = vida;
+        return vida;
     }
     
     public Integer getAtaque() {
@@ -53,5 +54,5 @@ public Personagem(String nome, Integer vida, Integer ataque, Integer defesa) {
     }
 //#endregion
    
-public abstract Integer ataca(Integer ataque, Integer vida);
+public abstract Integer ataca(Integer ataque, Integer vida, Personagem vidaFinal);
 }

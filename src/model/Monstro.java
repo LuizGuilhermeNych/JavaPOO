@@ -6,12 +6,14 @@ public class Monstro extends Personagem{
         super(nome, vida, ataque, defesa);
 }
 
-    public static Monstro esqueleto = new Monstro("Esqueleto", 8, 10, 8);
+    public static Monstro esqueleto = new Monstro("Esqueleto", 10, 10, 8);
 
     @Override
-    public Integer ataca(Integer ataque, Integer vida) {
-        vida = super.getVida() - ataque;
-        return vida;
+    public Integer ataca(Integer ataque, Integer vida, Personagem vidaFinal) {
+        // TODO Auto-generated method stub
+        return null;
     }
+
+
     
 }
