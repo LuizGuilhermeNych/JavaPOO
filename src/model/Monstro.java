@@ -10,10 +10,17 @@ public class Monstro extends Personagem{
 
     @Override
     public Integer ataca(Integer ataque, Integer vida, Personagem vidaFinal) {
-        // TODO Auto-generated method stub
-        return null;
+        return vidaFinal.setVida(ataque - vida);
     }
 
+    @Override
+    public Integer equipa(Integer base, Integer modEquip, Integer tipo, Personagem valorFinal) {
+        if (tipo == 1){
+            return valorFinal.setAtaque(base + modEquip);
+        } else {
+            return valorFinal.setDefesa(base + modEquip);
+        }
+        
+    }
 
-    
 }

@@ -12,5 +12,15 @@ public class Heroi extends Personagem{
     public Integer ataca(Integer ataque, Integer vida, Personagem vidaFinal) {
         return vidaFinal.setVida(ataque - vida);
     }
-    
+
+    @Override
+    public Integer equipa(Integer base, Integer modEquip, Integer tipo, Personagem valorFinal) {
+        if (tipo == 1){
+            return valorFinal.setAtaque(base + modEquip);
+        } else {
+            return valorFinal.setDefesa(base + modEquip);
+        }
+        
+    }
+
 }

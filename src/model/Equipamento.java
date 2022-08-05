@@ -6,11 +6,14 @@ public class Equipamento {
     
     private Integer modif;
 
+    private Integer tipo;
+
 //#region Construtor
-public Equipamento(String nome, Integer modif) {
-        this.nome = nome;
-        this.modif = modif;
-    }
+public Equipamento(String nome, Integer modif, Integer tipo) {
+    this.nome = nome;
+    this.modif = modif;
+    this.tipo = tipo;
+}
 //#endregion
 
 //#region Métodos  
@@ -28,6 +31,14 @@ public Equipamento(String nome, Integer modif) {
 
     public void setModif(Integer modif) {
         this.modif = modif;
+    }
+
+    public Integer getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Integer tipo) {
+        this.tipo = tipo;
     }
 //#endregion
 
